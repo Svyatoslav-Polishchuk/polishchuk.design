@@ -1,2 +1,2 @@
 # polishchuk.design
-Personal website
+12 October 2018. Stay tuned
