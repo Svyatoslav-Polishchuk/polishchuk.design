@@ -46,14 +46,14 @@ body {
       text-transform: uppercase;
       font-weight: bold;
       text-decoration: line-through;
-      -webkit-text-decoration-color: transparent;
-              text-decoration-color: transparent;
+      -webkit-text-decoration-color: $font-black;
+              text-decoration-color: $font-black;
       -webkit-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out;
 
       &:hover {
-        -webkit-text-decoration-color: $font-black;
-                text-decoration-color: $font-black;
+        -webkit-text-decoration-color: transparent;
+                text-decoration-color: transparent;
         color: $font-black;
       }
     }
