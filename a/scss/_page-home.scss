@@ -25,11 +25,19 @@ body {
   .links {
     padding: 4rem 2rem;
     font-size: 1.125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
 
     @include for-size(tablet) {
-      flex-flow: row nowrap;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
     }
 
     a {
@@ -38,11 +46,14 @@ body {
       text-transform: uppercase;
       font-weight: bold;
       text-decoration: line-through;
-      text-decoration-color: transparent;
+      -webkit-text-decoration-color: transparent;
+              text-decoration-color: transparent;
+      -webkit-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out;
 
       &:hover {
-        text-decoration-color: $font-black;
+        -webkit-text-decoration-color: $font-black;
+                text-decoration-color: $font-black;
         color: $font-black;
       }
     }
