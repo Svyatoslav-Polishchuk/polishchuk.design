@@ -18,7 +18,6 @@ $(".link-contacts").on({
   }
 });
 
-
 $("#getConacts").click(function() {
   $(".header").toggleClass("contacts-shown");
   $(".shading-container").toggleClass("shown");

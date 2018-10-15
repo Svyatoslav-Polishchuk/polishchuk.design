@@ -11,7 +11,8 @@ h2 {
 
 svg {
   g {
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -19,8 +20,9 @@ a.link {
   font-size: 1rem;
   line-height: 1;
   color: $black;
-  transition: all .3s ease-in-out;
-  letter-spacing: .5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.5px;
 
   &:hover {
     color: darken($black, 10);
@@ -50,8 +52,12 @@ a.link {
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   @include for-size(desktop) {
     max-width: 1280px;
@@ -67,17 +73,26 @@ a.link {
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
   &.row {
-    flex-flow: row nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
   }
 
   &.column {
-    flex-flow: column nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
   }
 
   &.wrap {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }

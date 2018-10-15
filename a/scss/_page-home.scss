@@ -1,11 +1,9 @@
-html
-{
+html {
   width: 100%;
   height: 100%;
 }
 
-body
-{
+body {
   width: 100%;
   height: 100%;
   background-color: $white;
@@ -14,39 +12,33 @@ body
   font-size: 1rem;
 }
 
-.content-main
-{
+.content-main {
   height: 100%;
   position: relative;
   top: 5rem;
 
-  .welcome-wrapper
-  {
+  .welcome-wrapper {
     padding: 15rem 0;
 
-    h2
-    {
-      padding-bottom: .5rem;
+    h2 {
+      padding-bottom: 0.5rem;
     }
   }
 
-  .portfolio-wrapper
-  {
+  .portfolio-wrapper {
     padding: 2rem 0;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 
-    h2
-    {
+    h2 {
       font-style: italic;
-      padding-bottom: .5rem;
+      padding-bottom: 0.5rem;
     }
 
-    a
-    {
-
-      svg
-      {
-        margin-right: .5rem;
+    a {
+      svg {
+        margin-right: 0.5rem;
       }
     }
   }
