@@ -1,57 +1,52 @@
-html {
+html
+{
   width: 100%;
   height: 100%;
 }
 
-body {
+body
+{
   width: 100%;
   height: 100%;
-  background-color: $bg-white;
-  color: $font-black;
+  background-color: $white;
+  color: $black;
   line-height: 1.278;
   font-size: 1rem;
 }
 
-body {
-  padding: 4rem 0;
-  max-width: 900px;
-  margin: 0 auto;
+.content-main
+{
+  height: 100%;
+  position: relative;
+  top: 5rem;
 
-  h1 {
-    font-size: 4rem;
-    padding: 4rem 2rem;
+  .welcome-wrapper
+  {
+    padding: 15rem 0;
+
+    h2
+    {
+      padding-bottom: .5rem;
+    }
   }
 
-  .links {
-    padding: 4rem 2rem;
-    font-size: 1.125rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+  .portfolio-wrapper
+  {
+    padding: 2rem 0;
+    justify-content: flex-end;
 
-    @include for-size(tablet) {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-flow: row nowrap;
-              flex-flow: row nowrap;
+    h2
+    {
+      font-style: italic;
+      padding-bottom: .5rem;
     }
 
-    a {
-      padding: 1rem 2rem 1rem 0;
-      color: $font-gray;
-      text-transform: uppercase;
-      font-weight: bold;
-      text-decoration: line-through;
-      -webkit-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out;
+    a
+    {
 
-      &:hover {
-        text-decoration: none;
-        color: $font-black;
+      svg
+      {
+        margin-right: .5rem;
       }
     }
   }

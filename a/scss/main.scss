@@ -2,7 +2,7 @@
  *
  *  Website Name:   polishchuk.design
  *	Website URI:    https://polishchuk.design
- *  Version:        1.0
+ *  Version:        1.0.1
  *
  **/
 
@@ -11,6 +11,11 @@
 @import "utilities/layout";
 @import "utilities/mixins";
 @import "utilities/variables";
+
+// Global elements
+@import "element-general";
+@import "element-header";
+
 
 // Pages
 @import "page-home";

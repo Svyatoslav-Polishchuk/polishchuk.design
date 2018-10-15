@@ -1,0 +1,121 @@
+.header
+{
+  width: 100%;
+  height: auto;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-9.5rem);
+  transition: all .3s ease-in-out;
+  z-index: 999;
+
+  .contacts-container
+  {
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+
+    @include for-size(desktop)
+    {
+      padding: 4rem 0;
+    }
+
+    .contacts-text
+    {
+      flex: 0 1 auto;
+      letter-spacing: .5px;
+    }
+
+    .contacts-line
+    {
+      flex: 1 0 auto;
+      background-color: rgba($gray, .5);
+      height: 1px;
+      margin-left: 2rem;
+    }
+
+    .contacts-links-wrapper
+    {
+      flex: 0 1 auto;
+
+      &:hover
+      {
+        .link-contacts:not(.this-hovered)
+        {
+          color: $gray;
+
+          svg g
+          {
+            fill: $gray;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-conatiner
+  {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+
+    @include for-size(desktop)
+    {
+      padding: 2rem 0;
+    }
+
+    .logo-wrapper
+    {
+      opacity: 0;
+      float: left;
+      margin-left: -1rem;
+    }
+
+    .nav-wrapper
+    {
+      float: right;
+      margin-right: -1rem;
+
+      &:hover
+      {
+        .link-nav:not(.this-hovered)
+        {
+          color: $gray;
+        }
+      }
+
+      #getConacts.contacts-shown
+      {
+        content: "close";
+      }
+    }
+  }
+
+  &.contacts-shown
+  {
+    transform: translateY(0);
+  }
+}
+
+.shading-container
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($gray, .5);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -99;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+
+  &.shown
+  {
+      z-index: 99;
+      opacity: 1;
+  }
+}
