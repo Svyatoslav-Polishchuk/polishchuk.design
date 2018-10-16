@@ -8,14 +8,13 @@
 
 // Utilities
 @import "utilities/reboot";
-@import "utilities/layout";
 @import "utilities/mixins";
+@import "utilities/layout";
 @import "utilities/variables";
 
 // Global elements
 @import "element-general";
 @import "element-header";
-
 
 // Pages
 @import "page-home";

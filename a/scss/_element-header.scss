@@ -1,55 +1,52 @@
-.header {
-  width: 100%;
-  height: auto;
-  background-color: $white;
+.header
+{
   position: fixed;
   top: 0;
   left: 0;
-  -webkit-transform: translateY(-9.5rem);
-          transform: translateY(-9.5rem);
-  -webkit-transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: auto;
+  background-color: $white;
+  transform: translateY(-11.25rem);
   transition: all 0.3s ease-in-out;
-  z-index: 999;
+  z-index: 1;
 
-  .contacts-container {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  .container-contacts
+  {
     padding: 2rem 0;
+    letter-spacing: 0.5px;
 
-    @include for-size(desktop) {
+    @include for-size(desktop)
+    {
       padding: 4rem 0;
     }
 
-    .contacts-text {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 1 auto;
-              flex: 0 1 auto;
-      letter-spacing: 0.5px;
+    .contacts-text
+    {
+      flex: 0 1 auto;
+      margin-left: -1rem;
+      padding: 1rem;
     }
 
-    .contacts-line {
-      -webkit-box-flex: 1;
-          -ms-flex: 1 0 auto;
-              flex: 1 0 auto;
-      background-color: rgba($gray, .5);
+    .contacts-line
+    {
+      flex: 1 0 auto;
+      margin: 0 2rem;
       height: 1px;
-      margin-left: 2rem;
+      background-color: rgba($gray, .5);
     }
 
-    .contacts-links-wrapper {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 1 auto;
-              flex: 0 1 auto;
+    .contacts-links
+    {
+      flex: 0 1 auto;
 
-      &:hover {
-        .link-contacts:not(.this-hovered) {
+      &:hover
+      {
+        .link-contacts:not(.is-hovered)
+        {
           color: $gray;
 
-          svg g {
+          svg g
+          {
             fill: $gray;
           }
         }
@@ -57,64 +54,147 @@
     }
   }
 
-  .nav-conatiner {
+  .container-menu
+  {
+    position: relative;
+    padding: 1rem 0;
     width: 100%;
     height: auto;
-    padding: 1rem 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
 
-    @include for-size(desktop) {
+    @include for-size(desktop)
+    {
       padding: 2rem 0;
     }
 
-    .logo-wrapper {
-      opacity: 0;
-      float: left;
-      margin-left: -1rem;
-    }
+    nav
+    {
+      width: 100%;
 
-    .nav-wrapper {
-      float: right;
-      margin-right: -1rem;
+      .menu-logo
+      {
+        float: left;
+        margin-left: -.25rem;
+        transition: all .3s ease-in-out;
 
-      &:hover {
-        .link-nav:not(.this-hovered) {
-          color: $gray;
+        a
+        {
+          position: relative;
+
+          &::after
+          {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            border-radius: .125rem;
+            transform: skewX(-15deg);
+            transition: all .3s ease-in-out;
+            z-index: -1;
+          }
+
+          &:hover
+          {
+            letter-spacing: 1.5px;
+
+            &::after
+            {
+              border-radius: 0;
+              transform: skewX(0deg);
+            }
+          }
         }
       }
 
-      #getConacts.contacts-shown {
-        content: "close";
+      .menu-links
+      {
+        float: right;
+        margin-right: -1rem;
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        visibility: visible;
+
+        &:hover
+        {
+          .link-nav:not(.is-hovered)
+          {
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    .menu-contacts-close
+    {
+      position: absolute;
+      display: block;
+      right: 0;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+      visibility: hidden;
+
+      svg
+      {
+        margin: .25rem;
+        opacity: .8;
+        transition: all .3s ease-in-out;
+      }
+
+      &:hover svg
+      {
+        opacity: 1;
       }
     }
   }
 
-  &.contacts-shown {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  &.contacts-shown
+  {
+    transform: translateY(0);
+    z-index: 999;
+
+    .container-menu
+    {
+      nav
+      {
+        .menu-logo
+        {
+          opacity: .1;
+          pointer-events: none;
+        }
+
+        .menu-links
+        {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .menu-contacts-close
+      {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }
 
-.shading-container {
+.shading-container
+{
   position: absolute;
+  left: 0;
+  bottom: 0;
   height: 100%;
   width: 100%;
   background-color: rgba($gray, .5);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: -99;
   opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  cursor: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMCAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5Db21iaW5lZCBTaGFwZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSJob21lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTMuMDAwMDAwLCAtMzgzLjAwMDAwMCkiIGZpbGw9IiMzMjMyMzQiPiAgICAgICAgICAgIDxwYXRoIGQ9Ik05Ny45NDk3NDc1LDM4Ni41MzU1MzQgTDEwMS40ODUyODEsMzgzIEwxMDIuODk5NDk1LDM4NC40MTQyMTQgTDk5LjM2Mzk2MSwzODcuOTQ5NzQ3IEwxMDIuODk5NDk1LDM5MS40ODUyODEgTDEwMS40ODUyODEsMzkyLjg5OTQ5NSBMOTcuOTQ5NzQ3NSwzODkuMzYzOTYxIEw5NC40MTQyMTM2LDM5Mi44OTk0OTUgTDkzLDM5MS40ODUyODEgTDk2LjUzNTUzMzksMzg3Ljk0OTc0NyBMOTMsMzg0LjQxNDIxNCBMOTQuNDE0MjEzNiwzODMgTDk3Ljk0OTc0NzUsMzg2LjUzNTUzNCBaIiBpZD0iQ29tYmluZWQtU2hhcGUiPjwvcGF0aD4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==), auto;
+  z-index: -9;
 
   &.shown {
-    z-index: 99;
     opacity: 1;
+    z-index: 99;
   }
 }

@@ -1,98 +1,87 @@
-h1 {
-  font-size: 2.5rem;
-  font-weight: normal;
+// root
+// =========================================================
+html
+{
+  width: 100%;
+  height: 100%;
 }
 
-h2 {
+body
+{
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  line-height: 1.278;
+  color: $black;
+  background-color: $white;
+}
+
+// typography
+// =========================================================
+h1
+{
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+h2
+{
   font-size: 1.5rem;
-  font-weight: normal;
+  font-weight: 400;
   color: $gray;
 }
 
-svg {
-  g {
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
+// icons
+// =========================================================
+svg g
+{
+  transition: all 0.3s ease-in-out;
 }
 
-a.link {
+// links and buttons
+// =========================================================
+a.link
+{
+  display: inline-block;
   font-size: 1rem;
   line-height: 1;
-  color: $black;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   letter-spacing: 0.5px;
+  color: $black;
+  transition: all 0.3s ease-in-out;
 
-  &:hover {
+  &:hover
+  {
     color: darken($black, 10);
     text-decoration: none;
   }
 
-  &.link-logo {
-    font-weight: bold;
+  &.link-logo
+  {
+    padding: .75rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &.link-nav
+  {
     padding: 1rem;
+
+    &:not(:first-child)
+    {
+      margin-left: 1rem;
+    }
   }
 
-  &.link-nav {
-    margin-left: 1rem;
+  &.link-contacts
+  {
     padding: 1rem;
-  }
 
-  &.link-contacts {
-    margin-left: 2rem;
-    padding: 1rem;
-  }
-}
-
-.container {
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-
-  @include for-size(desktop) {
-    max-width: 1280px;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  @include for-size(desktop-large) {
-    max-width: 1920px;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  &.row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-  }
-
-  &.column {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-  }
-
-  &.wrap {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    &:not(:first-child)
+    {
+      margin-left: 1rem;
+    }
   }
 }

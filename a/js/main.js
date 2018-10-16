@@ -1,24 +1,29 @@
-$(".link-nav").on({
-  mouseenter: function () {
-    $(this).addClass("this-hovered");
-    $(".link-nav").addClass
-  },
-  mouseleave: function () {
-    $(this).removeClass("this-hovered");
+$(".link-nav").on(
+  {
+    mouseenter: function () {
+      $(this).addClass("is-hovered");
+      $(".link-nav").addClass
+    },
+    mouseleave: function () {
+      $(this).removeClass("is-hovered");
+    }
   }
-});
+);
 
-$(".link-contacts").on({
-  mouseenter: function () {
-    $(this).addClass("this-hovered");
-    $(".link-contacts").addClass
-  },
-  mouseleave: function () {
-    $(this).removeClass("this-hovered");
+$(".link-contacts").on(
+  {
+    mouseenter: function () {
+      $(this).addClass("is-hovered");
+      $(".link-contacts").addClass
+    },
+    mouseleave: function () {
+      $(this).removeClass("is-hovered");
+    }
   }
-});
+);
 
-$("#getConacts").click(function() {
+function toggleContacts()
+{
   $(".header").toggleClass("contacts-shown");
   $(".shading-container").toggleClass("shown");
-})
+}
