@@ -14,6 +14,14 @@ body
   line-height: 1.278;
   color: $black;
   background-color: $white;
+
+  .content
+  {
+    position: relative;
+    top: 7rem;
+    width: 100%;
+    height: auto;
+  }
 }
 
 // typography

@@ -176,12 +176,12 @@
           <div class="menu-links">
             <a href="/f/polishchuk-portfolio.pdf" target="_blank" class="link link-nav">work</a>
             <a href="/f/polishchuk-resume.pdf" target="_blank" class="link link-nav">resume</a>
-            <a href="#contacts" class="link link-nav" onclick="toggleContacts()">contact</a>
+            <a href="#contacts" class="link link-nav toggleContacts">contact</a>
           </div>
         </nav>
 
         <div class="menu-contacts-close">
-          <a href="#" class="link link-close" onclick="toggleContacts()">
+          <a href="#" class="link link-close toggleContacts">
 
             <svg id="icon-close" width="12px" height="12px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
                 <g>
@@ -200,14 +200,61 @@
     </div>
   </div>
 
-  <div class="content-main">
+  <div class="content content-home">
     <div class="container">
-      <div class="welcome-wrapper">
-        <h2>Hello!</h2>
-        <h1>I'm Svyatoslav Polishchuk. Product Designer who finds answers</h1>
+
+      <div class="container-welcome">
+        <div class="intro-wrapper">
+          <div class="intro-text">Hi,</div>
+
+          <div class="name-text flex row middle">
+            I'm
+            <div class="name-wrapper">
+              <div class="name-rotate-front">Svyatoslav Polishchuk</div>
+              <div class="name-rotate-side flex row middle justify">
+                <span>svi-a-to-slav&ensp;po-li-shchuk</span>
+                <audio id="name-pronunciation">
+                  <source src="a/sayit.mp3" type="audio/mpeg">
+                </audio>
+                <svg class="btn-play" width="18px" height="18px" viewbox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewbox="0 0 100 100"data-play-state="paused">
+                  <polygon fill="#FCFCFC" points="15,0 50,25 50,75 15,100">
+                    <animate
+                      id="left"
+                      attributeType="XML"
+                      attributeName="points"
+                      begin=”indefinite”
+                      fill="freeze"
+                      from="15,0 50,25 50,75 15,100"
+                      dur="100ms"/>
+                  </polygon>
+                  <polygon fill="#FCFCFC" points="50,25 85,50 85,50, 50,75" >
+                    <animate
+                      id="right"
+                      attributeType="XML"
+                      attributeName="points"
+                      begin=”indefinite”
+                      fill="freeze"
+                      from="50,25 85,50 85,50, 50,75"
+                      dur="100ms"/>
+                  </polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-text">Product Designer, Interaction Designer, UX/UI Designer, whatever-you-call-it... but really I'm just a designer who finds answers to complex business and social questions.</div>
+        </div>
+
+        <div class="about-wrapper">
+
+        </div>
+
+        <div class="more-btn">
+
+        </div>
       </div>
 
-      <div class="portfolio-wrapper flex column">
+      <div class="container-portfolio flex column">
         <h2>Portfolio is coming soon.</h2>
         <a href="/f/polishchuk-portfolio.pdf" target="_blank" class="link">
           <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -225,7 +272,7 @@
     </div>
   </div>
 
-  <div class="shading-container" onclick="toggleContacts()"></div>
+  <div class="shading-container toggleContacts"></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="a/js/main.js"></script>

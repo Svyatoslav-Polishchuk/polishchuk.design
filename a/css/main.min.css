@@ -415,6 +415,12 @@ body {
   color: #323234;
   background-color: #FCFCFC;
 }
+body .content {
+  position: relative;
+  top: 7rem;
+  width: 100%;
+  height: auto;
+}
 
 h1 {
   font-size: 2.5rem;
@@ -606,27 +612,52 @@ a.link.link-contacts:not(:first-child) {
   z-index: 99;
 }
 
-.content-main {
-  position: relative;
-  top: 5rem;
-  width: 100%;
-  height: 100%;
+.content-home .container-welcome .intro-wrapper {
+  padding: 4rem 0;
+  max-width: 66%;
 }
-.content-main .welcome-wrapper {
-  padding: 15rem 0;
+.content-home .container-welcome .intro-wrapper .intro-text {
+  font-size: 1.25rem;
+  color: #B0B5B9;
 }
-.content-main .welcome-wrapper h2 {
-  padding-bottom: 0.5rem;
+.content-home .container-welcome .intro-wrapper .name-text {
+  padding: 1rem 0;
+  font-size: 2rem;
 }
-.content-main .portfolio-wrapper {
+.content-home .container-welcome .intro-wrapper .name-text .name-wrapper {
+  height: 4.5rem;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-in-out;
+}
+.content-home .container-welcome .intro-wrapper .name-text .name-wrapper .name-rotate-front {
+  margin: 1rem 1rem 0.75rem;
+  padding-bottom: 0.125rem;
+  border-bottom: 0.125rem dotted #B0B5B9;
+  transform: translateZ(2.5rem);
+}
+.content-home .container-welcome .intro-wrapper .name-text .name-wrapper .name-rotate-side {
+  margin: 0 1rem;
+  padding: 1rem;
+  height: 3.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #FCFCFC;
+  background-color: #323234;
+  transform: rotateX(-90deg) translateZ(-2.5rem);
+}
+.content-home .container-welcome .intro-wrapper .name-text .name-wrapper:hover {
+  transform: rotateX(90deg);
+}
+.content-home .container-portfolio {
   justify-content: flex-end;
-  padding: 2rem 0;
+  padding: 12rem 0 2rem;
 }
-.content-main .portfolio-wrapper h2 {
+.content-home .container-portfolio h2 {
   padding-bottom: 0.5rem;
   font-style: italic;
 }
-.content-main .portfolio-wrapper a svg {
+.content-home .container-portfolio a svg {
   margin-right: 0.5rem;
 }
 
