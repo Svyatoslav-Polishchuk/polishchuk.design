@@ -679,7 +679,7 @@ body.contacts-shown .container-shading {
 }
 
 .container-shading {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   height: 100%;
