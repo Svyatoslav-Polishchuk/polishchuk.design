@@ -1,3 +1,4 @@
+// nav and contact links hover
 $(".link-nav, .link-contacts").on(
   {
     mouseenter: function() {
@@ -9,13 +10,21 @@ $(".link-nav, .link-contacts").on(
   }
 );
 
+// contact container toggle
 $(".toggleContacts").click(function()
   {
-    $(".header").toggleClass("contacts-shown");
-    $(".shading-container").toggleClass("shown");
+    $("body").toggleClass("contacts-shown");
   }
 );
 
+// expand about section toggle
+$(".toggleAbout").click(function()
+  {
+    $("#intro").toggleClass("expanded");
+  }
+);
+
+// name pronunciation player and svg icon animation
 var audioplayer = document.getElementById("name-pronunciation");
 
 var delay = (function()
@@ -42,19 +51,19 @@ const points =
     }
 };
 
-$(".btn-play").click(function()
+$("#btn-play").click(function()
   {
     if (audioplayer.paused)
     {
 
-      $('#left').attr(
+      $('#play-left').attr(
         {
           from: points.left.from ,
           to: points.left.to
         }
       ).get(0).beginElement();
 
-      $('#right').attr(
+      $('#play-right').attr(
         {
           from: points.right.from,
           to: points.right.to
@@ -65,14 +74,14 @@ $(".btn-play").click(function()
 
       delay(function()
       {
-        $('#left').attr(
+        $('#play-left').attr(
           {
             from: points.left.to ,
             to: points.left.from
           }
         ).get(0).beginElement();
 
-        $('#right').attr(
+        $('#play-right').attr(
           {
             from: points.right.to,
             to: points.right.from
@@ -85,14 +94,14 @@ $(".btn-play").click(function()
     {
       audioplayer.pause();
 
-      $('#left').attr(
+      $('#play-left').attr(
         {
           from: points.left.to ,
           to: points.left.from
         }
       ).get(0).beginElement();
 
-      $('#right').attr(
+      $('#play-right').attr(
         {
           from: points.right.to,
           to: points.right.from
